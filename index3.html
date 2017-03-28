@@ -1,0 +1,39 @@
+<html>
+<style>
+    div .container, div .cell {
+        border: 1px solid black;
+    }
+
+    div.container {
+        display: inline-block;
+        width: 100%;
+        max-width: 656px;
+    }
+
+    div.cell {
+        width: 80px;
+        height: 80px;
+        display: block;
+        float: left;
+    }
+
+    div.cell.black {
+        background-color: black;
+    }
+</style>
+<body>
+    <div class="container"/>
+    <script type="text/javascript">
+        var container = document.getElementsByClassName("container")[0];
+        for (var i = 0; i < 64; i++) {
+            var cell = document.createElement('div');
+            var className = "cell";
+            if (i % 2 == 0 && Math.floor(i / 8) % 2 == 0 || i % 2 == 1 && Math.floor(i / 8) % 2 == 1) {
+                className += " black";
+            }
+            cell.className = className;
+            container.appendChild(cell);
+        }
+    </script>
+</body>
+</html
